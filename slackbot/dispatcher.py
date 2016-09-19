@@ -90,7 +90,7 @@ class MessageDispatcher(object):
         if username == botname or username == u'slackbot':
             return
 
-        logger.debug("new message: %s", msg.text)
+        logger.debug("new message: %s", msg)
         msg_respond_to = self.filter_text(msg)
         if msg_respond_to:
             self._pool.add_task(('respond_to', msg_respond_to))
